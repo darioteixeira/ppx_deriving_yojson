@@ -15,7 +15,7 @@ type json =
 
 let show_error_or =
   let module M = struct
-    type 'a error_or = ('a, string) Result.result [@@deriving show]
+    type 'a error_or = ('a, string) Stdlib.result [@@deriving show]
   end in
   M.show_error_or
 

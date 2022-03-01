@@ -17,7 +17,7 @@ let rec map_bind f acc xs =
      | Result.Ok x -> map_bind f (x :: acc) xs)
   | [] -> Result.Ok (List.rev acc)
 
-type 'a error_or = ('a, string) Result.result
+type 'a error_or = ('a, string) Stdlib.result
 
 (** [safe_map f l] returns the same value as [List.map f l], but
     computes it tail-recursively so that large list lengths don't
